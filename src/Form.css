@@ -1,0 +1,18 @@
+.Form {
+  font-family: var(--primary-font);
+  max-width: 80%;
+}
+
+form .form-control {
+  border-color: transparent;
+}
+form .form-control:focus {
+  border-color: white;
+  box-shadow: none;
+}
+
+.buttons button {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 500;
+}
