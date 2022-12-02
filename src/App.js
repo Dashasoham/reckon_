@@ -8,6 +8,7 @@ function App() {
       <div>
         <h2> 1, 2, 3 Ready To Go!</h2>
         <img src={image} alt="shopper" />
+
         <Form />
       </div>{' '}
     </div>

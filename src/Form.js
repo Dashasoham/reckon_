@@ -1,23 +1,32 @@
 import React, { useState } from 'react';
 import './Form.css';
+import { useNavigate } from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function Form() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  function SignUp() {
+    const navigate = useNavigate();
+
+    navigate('/SignUpPage');
+  }
+
   function SubmitButton() {
     let validEmail = /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i;
-
     if (validEmail.test(email) && password) {
       return (
         <div className="buttons">
-          <button
+          <a
+            href="./SignUpPage"
             type="Sign Up"
             className="btn btn border  rounded w-100 mt-3 mb-3"
+            onClick={SignUp}
           >
             Sign Up
-          </button>
+          </a>
           <button type="submit" className="btn btn-primary  w-100 ">
             Log In
           </button>
@@ -27,8 +36,10 @@ export default function Form() {
       return (
         <div className="buttons">
           <button
+            href="./SignUpPage"
             type="Sign Up"
             className="btn btn border  rounded w-100 mt-3 mb-3"
+            onClick={SignUp}
           >
             Sign Up
           </button>
@@ -40,7 +51,6 @@ export default function Form() {
     }
   }
 
-  function enableLogIn() {}
   return (
     <div>
       <form>
@@ -50,8 +60,6 @@ export default function Form() {
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             className="form-control  "
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
             placeholder="Email address"
           />
         </div>
@@ -59,18 +67,15 @@ export default function Form() {
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
+            className="form-control"
             placeholder="Password"
-            onInput={enableLogIn}
           />
         </div>
         <SubmitButton />
       </form>
       <div className="password-reset mt-5">
         {' '}
-        Forgot password? <a href="#">Reset here</a>
+        Forgot password? <a href="./SignUpPage.js">Reset here</a>
       </div>
     </div>
   );
