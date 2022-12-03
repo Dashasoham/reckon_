@@ -1,15 +1,19 @@
 import './App.css';
-import Form from './Form';
-import image from './images/shopper.png';
+import { Form } from './Form';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { SignUpPage } from './SignUpPage';
 
 function App() {
   return (
     <div className="App">
       <div>
-        <h2> 1, 2, 3 Ready To Go!</h2>
-        <img src={image} alt="shopper" />
-
-        <Form />
+        {' '}
+        <Router>
+          <Switch>
+            <Route exact path="/Form" component={Form} />
+            <Route path="/" component={SignUpPage} />
+          </Switch>
+        </Router>
       </div>{' '}
     </div>
   );
