@@ -22,7 +22,7 @@ export function SignUpPage() {
 
   function SubmitButton() {
     let validEmail = /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i;
-    if (validEmail.test(email) && password && name && phone) {
+    if (validEmail.test(email) && password && name && phone && rememberMe) {
       return (
         <div className="buttons">
           <button
@@ -51,13 +51,13 @@ export function SignUpPage() {
 
   return (
     <div>
-      <form>
-        <span>
-          <Link to="/Form" className="top-left-arrow">
-            <img src={Vector} alt="arrow" />
-          </Link>
-          <h2> Sign Up </h2>
-        </span>
+      <span>
+        <Link to="/Form" className="top-left-arrow">
+          <img src={Vector} alt="arrow" />
+        </Link>
+        <h2> Sign Up </h2>
+      </span>
+      <form className="m-4">
         <div className="m-5">
           <div className="form-group border-bottom mb-4">
             <input

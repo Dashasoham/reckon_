@@ -92,9 +92,12 @@ export function Form() {
         </div>
         <SubmitButton />
       </form>
-      <div className="password-reset mt-5">
+      <div className="password-reset mt-3 mb-5">
         {' '}
-        Forgot password? <a href="./SignUpPage">Reset here</a>
+        Forgot password?{' '}
+        <a href="/" target="_blank" className="link">
+          <strong> Reset here</strong>
+        </a>
       </div>
     </div>
   );

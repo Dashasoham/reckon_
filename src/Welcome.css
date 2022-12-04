@@ -1,3 +1,8 @@
-.finalPage {
-  margin-top: 150px;
+.welcomeSubmitButton {
+  position: relative;
+  padding-top: 150px;
+}
+h2 {
+  border: none !important;
+  padding: 25px;
 }
