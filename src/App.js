@@ -10,7 +10,6 @@ import React from 'react';
 function App() {
   const [shouldRedirect, setShouldRedirect] = React.useState(false);
   function handleSaveClick() {
-    // Set the shouldRedirect state variable to true
     setShouldRedirect(true);
   }
   return (

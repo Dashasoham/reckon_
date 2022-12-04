@@ -11,7 +11,6 @@ export function Form() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   function SignUp() {
-    // Redirect to the SignUpPage page when the button is clicked
     history.push('/SignUpPage');
   }
 
