@@ -11,6 +11,7 @@ export function Form() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   function SignUp() {
+    // Redirect to the SignUpPage page when the button is clicked
     history.push('/SignUpPage');
   }
 
@@ -83,12 +84,7 @@ export function Form() {
             className="password-visibility-toggle-btn"
           >
             {isPasswordVisible ? (
-              <a
-                href="https://www.flaticon.com/free-icons/eye"
-                title="eye icons"
-              >
-                Eye icons created by Kiranshastry - Flaticon
-              </a>
+              <i className="fa fa-eye" aria-hidden="true" />
             ) : (
               <i className="fa fa-eye-slash" aria-hidden="true" />
             )}

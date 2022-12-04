@@ -18,6 +18,9 @@ function App() {
         {' '}
         <Router>
           <Switch>
+            <Route exact path="/">
+              <Redirect to="/form" />
+            </Route>
             <Route exact path="/Form" component={Form} />
             <Route path="/SignUpPage" component={SignUpPage} />
             <Route path="/Welcome" component={Welcome} />
