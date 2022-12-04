@@ -11,8 +11,23 @@ form .form-control:focus {
   box-shadow: none;
 }
 
-.buttons button {
+.buttons .btn {
   padding-top: 20px;
   padding-bottom: 20px;
   font-weight: 500;
+  border: none;
+}
+.buttons .btn:disabled {
+  background-color: var(--secondary-color);
+}
+.btn-primary:not([disabled]) {
+  background-color: var(--primary-color);
+}
+.btn-primary:not([disabled]):hover {
+  /* Add the styles you want to apply when the button is hovered over here */
+  background-color: var(--primary-color);
+}
+.btn-primary:not([disabled]):active {
+  /* Add the styles you want to apply when the button is actively clicked here */
+  background-color: var(--primary-color) !important;
 }

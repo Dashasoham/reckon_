@@ -1,0 +1,25 @@
+.Validation div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #333;
+  margin: 0 2px;
+}
+.validationFooter {
+  margin-top: 200px;
+}
+p {
+  font-size: 15px;
+}

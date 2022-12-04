@@ -7,7 +7,7 @@ import Vector from './images/Vector.svg';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-export function SignUpPage(props) {
+export function SignUpPage() {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [phone, setPhone] = React.useState('');

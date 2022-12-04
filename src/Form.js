@@ -83,7 +83,6 @@ export function Form() {
             type="button"
             className="password-visibility-toggle-btn"
           >
-            {/* Show the eye icon to indicate that the password is visible */}
             {isPasswordVisible ? (
               <i className="fa fa-eye" aria-hidden="true" />
             ) : (
