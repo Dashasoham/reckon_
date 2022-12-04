@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Vector from './images/Vector.svg';
 import './AccountValidation.css';
+import { useHistory } from 'react-router-dom';
 
 export function AccountValidation() {
   const [number1, setNumber1] = React.useState('');
@@ -18,11 +19,20 @@ export function AccountValidation() {
   const input5Ref = React.useRef(null);
   const input6Ref = React.useRef(null);
 
+  const history = useHistory();
+
+  function Confirm() {
+    history.push('/Welcome');
+  }
   function SubmitButton() {
     if (number1 && number2 && number3 && number4 && number5 && number6) {
       return (
         <div className="buttons">
-          <button type="button" className="btn btn-primary  w-100 ">
+          <button
+            type="button"
+            className="btn btn border  rounded w-100 mt-3 mb-3"
+            onClick={Confirm}
+          >
             Confirm
           </button>
         </div>
@@ -30,7 +40,11 @@ export function AccountValidation() {
     } else {
       return (
         <div className="buttons">
-          <button type="button" disabled className="btn btn-primary  w-100 ">
+          <button
+            type="button"
+            disabled
+            className="btn btn border  rounded w-100 mt-3 mb-3"
+          >
             Confirm
           </button>
         </div>

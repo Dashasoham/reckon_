@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './SignUpPage.css';
 import Vector from './images/Vector.svg';
+import './SignUpPage.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -26,7 +27,7 @@ export function SignUpPage() {
         <div className="buttons">
           <button
             type="button"
-            className="btn btn-primary  w-100 "
+            className="btn  border  rounded w-100 mt-3 mb-3"
             onClick={Save}
           >
             Save and Continue
@@ -36,7 +37,11 @@ export function SignUpPage() {
     } else {
       return (
         <div className="buttons">
-          <button type="button" disabled className="btn btn-primary  w-100 ">
+          <button
+            type="button"
+            disabled
+            className="btn  border  rounded w-100 mt-3 mb-3 "
+          >
             Save and Continue
           </button>
         </div>
@@ -102,9 +107,9 @@ export function SignUpPage() {
                 and Privacy Policy
               </label>
             </div>
-            <SubmitButton />
-          </footer>
+          </footer>{' '}
         </div>{' '}
+        <SubmitButton />
       </form>
     </div>
   );

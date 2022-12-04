@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { SignUpPage } from './SignUpPage';
 import { AccountValidation } from './AccountValidation';
 import { Redirect } from 'react-router-dom';
+import { Welcome } from './Welcome';
 import React from 'react';
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
           <Switch>
             <Route exact path="/Form" component={Form} />
             <Route path="/SignUpPage" component={SignUpPage} />
+            <Route path="/Welcome" component={Welcome} />
+
             <Route
               exact
               path="/"
