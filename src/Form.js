@@ -84,7 +84,12 @@ export function Form() {
             className="password-visibility-toggle-btn"
           >
             {isPasswordVisible ? (
-              <i className="fa fa-eye" aria-hidden="true" />
+              <a
+                href="https://www.flaticon.com/free-icons/eye"
+                title="eye icons"
+              >
+                Eye icons created by Kiranshastry - Flaticon
+              </a>
             ) : (
               <i className="fa fa-eye-slash" aria-hidden="true" />
             )}
