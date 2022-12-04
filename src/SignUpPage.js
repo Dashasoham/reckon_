@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
-import './SignUpPage.css';
 import Vector from './images/Vector.svg';
 import './SignUpPage.css';
 
