@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 import './SignUpPage.css';
@@ -6,31 +7,46 @@ import Vector from './images/Vector.svg';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-// A function-based React component for the Sign Up form
-export function SignUpPage() {
-  // Use the useState hook to store the form data in state
+export function SignUpPage(props) {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [phone, setPhone] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [rememberMe, setRememberMe] = React.useState(false);
+  const history = useHistory();
 
-  // A function that handles the form submission event
-  function handleSubmit(event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
+  function Save() {
+    history.push('/AccountValidation');
+  }
 
-    // TODO: Validate the form data and submit it to your server
-
-    // Clear the form after submission
-    setName('');
-    setEmail('');
-    setPhone('');
-    setPassword('');
+  function SubmitButton() {
+    let validEmail = /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i;
+    if (validEmail.test(email) && password && name && phone) {
+      return (
+        <div className="buttons">
+          <button
+            type="button"
+            className="btn btn-primary  w-100 "
+            onClick={Save}
+          >
+            Save and Continue
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div className="buttons">
+          <button type="button" disabled className="btn btn-primary  w-100 ">
+            Save and Continue
+          </button>
+        </div>
+      );
+    }
   }
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form>
         <span>
           <Link to="/Form" className="top-left-arrow">
             <img src={Vector} alt="arrow" />
@@ -47,7 +63,6 @@ export function SignUpPage() {
               onChange={(event) => setName(event.target.value)}
             />
           </div>
-
           <div className="form-group border-bottom mb-4">
             <input
               value={email}
@@ -74,14 +89,23 @@ export function SignUpPage() {
               onChange={(event) => setPassword(event.target.value)}
             />
           </div>
-        </div>
+          <footer>
+            <div className="form-check">
+              <label className="form-check-label">
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  checked={rememberMe}
+                  onChange={(event) => setRememberMe(event.target.checked)}
+                />
+                By checking this box, I agree to Reckon.ai Terms & Conditions
+                and Privacy Policy
+              </label>
+            </div>
+            <SubmitButton />
+          </footer>
+        </div>{' '}
       </form>
-      <button
-        type="Sign Up"
-        className="btn btn border  rounded w-100 mt-3 mb-3"
-      >
-        Sign Up
-      </button>
     </div>
   );
 }
